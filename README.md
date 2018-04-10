@@ -2,6 +2,8 @@
 
 This repository is a fork from [lostdecade/simple_canvas_game](https://github.com/lostdecade/simple_canvas_game)
 
+---
+
 ## Usage  
 
 ```bash
