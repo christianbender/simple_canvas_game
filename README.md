@@ -1,7 +1,12 @@
-# How to make a simple HTML5 Canvas game
+# Simple HTML5 game  
 
-Build your first HTML5 Canvas game in no time! [Read the whole article here.](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/)
+This repository is a fork from [lostdecade/simple_canvas_game](https://github.com/lostdecade/simple_canvas_game)
 
-* Subscribe to the [Lost Decade Games blog](http://www.lostdecadegames.com/rss.xml)
-* Listen to [Lostcast](http://www.lostdecadegames.com/lostcast/), the indie game dev podcast
-* Follow us [@LostDecadeGames](https://twitter.com/LostDecadeGames)
+## Usage  
+
+```bash
+npm install
+npm run serve
+``` 
+
+After this commands you can start the game with [http://127.0.0.1:8080](http://127.0.0.1:8080) in your browser.  
