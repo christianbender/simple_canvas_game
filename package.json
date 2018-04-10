@@ -1,0 +1,26 @@
+{
+  "name": "simple_canvas_game",
+  "version": "1.0.0",
+  "description": "simple javascript html5 game on basis of canvas element",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christianbender/simple_canvas_game.git"
+  },
+  "keywords": [
+    "simple",
+    "game",
+    "javascript",
+    "html5",
+    "canvas"
+  ],
+  "author": "Christian Bender",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christianbender/simple_canvas_game/issues"
+  },
+  "homepage": "https://github.com/christianbender/simple_canvas_game#readme"
+}
