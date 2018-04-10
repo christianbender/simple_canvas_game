@@ -6,6 +6,9 @@ This repository is a fork from [lostdecade/simple_canvas_game](https://github.co
 
 ## Usage  
 
+You can try it [online](https://christianbender.github.io/simple_canvas_game/)  
+Or you clone this repository and :  
+
 ```bash
 npm install
 npm run serve
