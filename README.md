@@ -1,6 +1,6 @@
 # Simple HTML5 game  
 
-This repository is a fork from [lostdecade/simple_canvas_game](https://github.com/lostdecade/simple_canvas_game)
+This repository is a fork from [lostdecade/simple_canvas_game](https://github.com/lostdecade/simple_canvas_game) :star:  
 
 ---
 
