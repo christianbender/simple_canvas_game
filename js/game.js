@@ -1,8 +1,13 @@
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = 512;
-canvas.height = 480;
+
+// magical numbers
+const WIDTH = 512;
+const HEIGHT = 480;
+
+canvas.width = WIDTH;
+canvas.height = HEIGHT;
 document.body.appendChild(canvas);
 
 // Background image
