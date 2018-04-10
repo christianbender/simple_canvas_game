@@ -6,7 +6,7 @@ This repository is a fork from [lostdecade/simple_canvas_game](https://github.co
 
 ## Usage  
 
-You can try it [online](https://christianbender.github.io/simple_canvas_game/)  
+You can [try it](https://christianbender.github.io/simple_canvas_game/) online.  
 Or you clone this repository and :  
 
 ```bash
@@ -27,3 +27,4 @@ After this commands you can start the game with [http://127.0.0.1:8080](http://1
   * Added ```http-server```  
 * In the javascript code:
   * Added constants for magical numbers.  
+* Added GitHub page for this project.  
