@@ -4,7 +4,8 @@
   "description": "simple javascript html5 game on basis of canvas element",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve" : "http-server"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/christianbender/simple_canvas_game/issues"
   },
-  "homepage": "https://github.com/christianbender/simple_canvas_game#readme"
+  "homepage": "https://github.com/christianbender/simple_canvas_game#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
 }
