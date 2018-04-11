@@ -27,4 +27,5 @@ After this commands you can start the game with [http://127.0.0.1:8080](http://1
   * Added ```http-server```  
 * In the javascript code:
   * Added constants for magical numbers.  
+  * Added bounds. Now the hero can't leave the playfield.  
 * Added GitHub page for this project.  
