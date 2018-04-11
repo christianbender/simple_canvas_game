@@ -38,7 +38,7 @@ monsterImage.src = "images/monster.png";
 var hero = {
 	speed: 256 // movement in pixels per second
 };
-var monster = {};
+var monster = {speed: 100};
 var monstersCaught = 0;
 
 // Handle keyboard controls
@@ -60,6 +60,10 @@ var reset = function () {
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
+};
+
+var moveMonster = function (modifier) {
+	// TODO
 };
 
 // Update game objects
@@ -91,6 +95,8 @@ var update = function (modifier) {
 		++monstersCaught;
 		reset();
 	}
+
+	moveMonster(modifier);
 };
 
 // Draw everything
@@ -131,7 +137,8 @@ var main = function () {
 
 // Cross-browser support for requestAnimationFrame
 var w = window;
-requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
+ || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 // Let's play this game!
 var then = Date.now();
