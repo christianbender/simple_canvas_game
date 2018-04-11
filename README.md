@@ -28,4 +28,5 @@ After this commands you can start the game with [http://127.0.0.1:8080](http://1
 * In the javascript code:
   * Added constants for magical numbers.  
   * Added bounds. Now the hero can't leave the playfield.  
+  * Simple AI for the monster. Now the monster tried to escape.  
 * Added GitHub page for this project.  

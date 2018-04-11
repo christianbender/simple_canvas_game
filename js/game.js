@@ -38,7 +38,7 @@ monsterImage.src = "images/monster.png";
 var hero = {
 	speed: 256 // movement in pixels per second
 };
-var monster = {speed: 100};
+var monster = { speed: 100 };
 var monstersCaught = 0;
 
 // Handle keyboard controls
@@ -62,9 +62,28 @@ var reset = function () {
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
 };
 
+// The monster escapes
 var moveMonster = function (modifier) {
-	// TODO
+	if (hero.x < monster.x) {
+		if (monster.x < WIDTH-64)
+			monster.x += modifier * monster.speed;
+
+	}
+	else {
+		if (monster.x > 32)
+			monster.x -= modifier * monster.speed;
+	}
+	if (hero.y < monster.y) {
+		if (monster.y < HEIGHT-64)
+			monster.y += modifier * monster.speed;
+
+	}
+	else {
+		if (monster.y > 64)
+			monster.y -= modifier * monster.speed;
+	}
 };
+
 
 // Update game objects
 var update = function (modifier) {
@@ -73,7 +92,7 @@ var update = function (modifier) {
 			hero.y -= hero.speed * modifier;
 	}
 	if (40 in keysDown) { // Player holding down
-		if (hero.y < HEIGHT-64)
+		if (hero.y < HEIGHT - 64)
 			hero.y += hero.speed * modifier;
 	}
 	if (37 in keysDown) { // Player holding left
@@ -81,7 +100,7 @@ var update = function (modifier) {
 			hero.x -= hero.speed * modifier;
 	}
 	if (39 in keysDown) { // Player holding right
-		if (hero.x < WIDTH-64)
+		if (hero.x < WIDTH - 64)
 			hero.x += hero.speed * modifier;
 	}
 
@@ -138,7 +157,7 @@ var main = function () {
 // Cross-browser support for requestAnimationFrame
 var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
- || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+	|| w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
 // Let's play this game!
 var then = Date.now();
