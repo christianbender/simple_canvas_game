@@ -60,12 +60,19 @@ var reset = function () {
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
+
+	// places the monster in the bounds. 
+	while (monster.x < 64 && (monster.x > (WIDTH - 64)) && monster.y < 64
+		&& (monster.y > HEIGHT - 64)) {
+		monster.x = 32 + (Math.random() * (canvas.width - 64));
+		monster.y = 32 + (Math.random() * (canvas.height - 64));
+	}
 };
 
 // The monster escapes
 var moveMonster = function (modifier) {
 	if (hero.x < monster.x) {
-		if (monster.x < WIDTH-64)
+		if (monster.x < WIDTH - 64)
 			monster.x += modifier * monster.speed;
 
 	}
@@ -74,7 +81,7 @@ var moveMonster = function (modifier) {
 			monster.x -= modifier * monster.speed;
 	}
 	if (hero.y < monster.y) {
-		if (monster.y < HEIGHT-64)
+		if (monster.y < HEIGHT - 64)
 			monster.y += modifier * monster.speed;
 
 	}
