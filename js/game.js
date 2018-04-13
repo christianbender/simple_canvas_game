@@ -5,6 +5,7 @@ var ctx = canvas.getContext("2d");
 // magical numbers
 const WIDTH = 512;
 const HEIGHT = 480;
+const NUMROSE = 10;
 
 canvas.width = WIDTH;
 canvas.height = HEIGHT;
@@ -34,12 +35,22 @@ monsterImage.onload = function () {
 };
 monsterImage.src = "images/monster.png";
 
+// the rose 
+let roseReady = false;
+let roseImage = new Image();
+roseImage.onload = function () {
+	roseReady = true;
+};
+roseImage.src = "images/rose.png";
+
 // Game objects
 var hero = {
 	speed: 256 // movement in pixels per second
 };
 var monster = { speed: 100 };
 var monstersCaught = 0;
+
+let roses = new Array();
 
 // Handle keyboard controls
 var keysDown = {};
@@ -66,6 +77,17 @@ var reset = function () {
 		&& (monster.y > HEIGHT - 64)) {
 		monster.x = 32 + (Math.random() * (canvas.width - 64));
 		monster.y = 32 + (Math.random() * (canvas.height - 64));
+	}
+
+	// creates some rose
+	for (let i = 0; i < NUMROSE; i++) {
+		let xVal = (Math.random() * (canvas.width - 64));
+		let yVal = (Math.random() * (canvas.height - 64));
+		while (xVal < 64 && xVal >= (WIDTH-100) && yVal < 100 && yVal >= (HEIGHT-100)) {
+			xVal = 32 + (Math.random() * (canvas.width - 100));
+			yVal = 32 + (Math.random() * (canvas.height - 100));
+		}
+		roses[i] = {x : xVal, y : yVal, display : true};
 	}
 };
 
@@ -122,6 +144,23 @@ var update = function (modifier) {
 		reset();
 	}
 
+	// collision detection for hero and rose
+	for (let i = 0; i < NUMROSE; i++) {
+		if (roses[i].display &&
+			hero.x <= (roses[i].x + 32)
+			&& roses[i].x <= (hero.x + 32)
+			&& hero.y <= (roses[i].y + 32)
+			&& roses[i].y <= (hero.y + 32)
+		) {
+			if (monstersCaught > 0) {
+				roses.display = false;
+				monstersCaught--;
+				reset();
+			}
+		}
+	
+	}
+
 	moveMonster(modifier);
 };
 
@@ -137,6 +176,13 @@ var render = function () {
 
 	if (monsterReady) {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
+	}
+
+	if (roseReady) {
+		for (let i = 0; i < NUMROSE; i++) {
+			if (roses[i].display)
+				ctx.drawImage(roseImage,roses[i].x,roses[i].y);
+		}
 	}
 
 	// Score

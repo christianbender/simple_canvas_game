@@ -30,4 +30,8 @@ After this commands you can start the game with [http://127.0.0.1:8080](http://1
   * Added bounds. Now the hero can't leave the playfield.  
   * Simple AI for the monster. Now the monster tried to escape.  
   * Places the monster in the bounds of the playfield.   
+  * Logic for rose.  
+* Graphic: 
+  * Added a [rose](https://opengameart.org/content/rose-sprite)  
+    * If you touch a rose then decrements your score.  
 * Added GitHub page for this project.  
